@@ -54,5 +54,12 @@ export class HomeComponent implements OnInit {
   removeItem(i) {
    this.todos.splice(i, 1);
    this._data.changeTodo(this.todos);
+   this.itemCount = this.todos.length;
   }
+  editItem(i) {
+  //  this.todos.splice(i, 1);
+  //  objIndex = this.todos.findIndex((obj => obj == i));
+  //  this._data.changeTodo(this.todos);
+  }
+
 }

@@ -1,6 +1,6 @@
 <div class="container color-dark">
   <div class="col">
-    <p>Add a bucket list item</p>
+    <p>Add a todo list</p>
   </div>
   <div class="col">
     <p>Your todo list({{ itemCount }})</p>
@@ -13,14 +13,15 @@
     <form>
       <input type="text" class="txt" name="item" placeholder="What needs to be done ?" [(ngModel)] ="todoText" >
 
-      <input type="submit" class="btn" [value]="btnText" (click)="addItem()">
+      <input type="submit" class="btn btn-success" [value]="btnText" (click)="addItem()" [disabled]="todoText==''">
     </form>
   </div>
   <div class="col">
     <p class="todo-container" *ngFor="let todo of todos; let i = index" >
       {{ todo }}
 
-    <i class="fa fa-remove  pull-right" (click)="removeItem(i)"></i>
+    <i class="fa fa-trash red pull-right" (click)="removeItem(i)"></i>
+    <i class="fa fa-edit  pull-right" (click)="editItem(i)"></i>
     </p>
   </div>
 </div>
